@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
 let userBalance = 15000;
 let userPin = 1515;
@@ -23,7 +24,7 @@ if (pinInput.pin === userPin) {
             message: "Please Enter the Amount to Withdraw:",
         });
         if (amountInput.amount <= userBalance) {
-            userBalance = userBalance - amountInput.amount;
+            userBalance -= amountInput.amount;
             console.log(`\nYou have successfully withdrawn ${amountInput.amount}.`);
             console.log(`\nYour current Account Balance is ${userBalance}`);
         }
